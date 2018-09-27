@@ -1,0 +1,39 @@
+<style>body {margin:0;}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
+<script>
+/*jshint multistr: true */
+var work = "var data = [100,100,100,100]; \
+onmessage = function(e) { \
+  data[0] = data[0]*0.9 + e.data[0]*0.1; \
+  data[1] = data[1]*0.9 + e.data[1]*0.1; \
+  data[2] = data[2]*0.95 + e.data[0]*0.05; \
+  data[3] = data[3]*0.95 + e.data[1]*0.05; \
+  postMessage(data); \
+}";
+var myWorker, posA = [0,0], posB = [0,0];
+
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+	var blob = new Blob([work]);
+  myWorker = new Worker(window.URL.createObjectURL(blob));
+	myWorker.onmessage = function(e) {
+    posA = [e.data[0], e.data[1]];
+		posB = [e.data[2], e.data[3]];
+  };
+	frameRate(30);
+}
+
+function draw() {
+	background(0,0,0,100);
+	noFill();
+	strokeWeight(25);
+	stroke(0,0,255,64);
+	ellipse(posB[0], posB[1], 160, 160);
+	stroke(0,0,255,128);
+	ellipse(posA[0], posA[1], 120, 120);
+	fill(0,0,255,192);
+	noStroke();
+	ellipse(mouseX, mouseY, 100, 100);
+  myWorker.postMessage([mouseX,mouseY]);
+}
+</script>
