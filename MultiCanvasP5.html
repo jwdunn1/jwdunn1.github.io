@@ -1,0 +1,38 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
+<style>div{display:inline-block;} body{margin:0;}</style>
+<div id = "wrapper">
+  <div id = "p5sketch1">
+    <!-- p5 instance will be created here -->
+  </div><div id = "p5sketch2">
+    <!-- p5 instance will be created here -->
+  </div>
+</div>
+<script>
+var myp5 = new p5( function( sketch ) {
+
+  sketch.setup = function() {
+    sketch.createCanvas(200, 200);
+  };
+
+  sketch.draw = function() {
+    var zoom = sketch.windowWidth>1599? 1.0 : 0.5;
+    sketch.background(0);
+    sketch.fill(255);
+    sketch.rect(sketch.mouseX/zoom,sketch.mouseY/zoom, 50,50);
+  };
+}, "p5sketch1");
+
+var myp5 = new p5( function( sketch ) {
+
+  sketch.setup = function() {
+    sketch.createCanvas(200, 200);
+  };
+
+  sketch.draw = function() {
+    sketch.background(64);
+    sketch.fill(255);
+    sketch.rect(sketch.mouseX,sketch.mouseY,50,50);
+  };
+}, "p5sketch2");
+</script>
