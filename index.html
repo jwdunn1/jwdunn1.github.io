@@ -1,39 +1,170 @@
-<style>body {margin:0;}</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
-<script>
-/*jshint multistr: true */
-var work = "var data = [100,100,100,100]; \
-onmessage = function(e) { \
-  data[0] = data[0]*0.9 + e.data[0]*0.1; \
-  data[1] = data[1]*0.9 + e.data[1]*0.1; \
-  data[2] = data[2]*0.95 + e.data[0]*0.05; \
-  data[3] = data[3]*0.95 + e.data[1]*0.05; \
-  postMessage(data); \
-}";
-var myWorker, posA = [0,0], posB = [0,0];
-
-function setup() {
-	createCanvas(windowWidth, windowHeight);
-	var blob = new Blob([work]);
-  myWorker = new Worker(window.URL.createObjectURL(blob));
-	myWorker.onmessage = function(e) {
-    posA = [e.data[0], e.data[1]];
-		posB = [e.data[2], e.data[3]];
-  };
-	frameRate(30);
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet"> 
+<style>
+html,body,h1,h2,ul,li {
+ 	padding: 0px;
+	margin: 0px;
+}
+body {
+	padding: 0px;
+	margin: 44px;
+	background-color: #373737;
+	font-family: 'Roboto', sans-serif;
+	color: #ffffff;
+	font-weight: 100;
 }
 
-function draw() {
-	background(0,0,0,100);
-	noFill();
-	strokeWeight(25);
-	stroke(0,0,255,64);
-	ellipse(posB[0], posB[1], 160, 160);
-	stroke(0,0,255,128);
-	ellipse(posA[0], posA[1], 120, 120);
-	fill(0,0,255,192);
-	noStroke();
-	ellipse(mouseX, mouseY, 100, 100);
-  myWorker.postMessage([mouseX,mouseY]);
+h1 {
+	font-family: 'Oswald', sans-serif;
+	font-size: 38px;
+	font-weight: 300;
 }
-</script>
+h2,h3,h4 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-weight: 100;
+}
+.title{
+  letter-spacing: 1px;
+}
+ul,li {
+	font-weight: 100;
+    list-style-type: none;
+}
+li:first-child {
+	font-weight: 400;
+    list-style-type: none;
+}
+ul {
+  margin-top: 30px;
+}
+.education {
+  margin-top: 60px;
+}
+@media only screen and (min-width: 720px) {
+.education {
+  margin-top: 0px;
+}
+.grid-container {
+display: grid; 
+grid-template-columns: 1fr 1fr 100px 1fr 1fr;
+grid-template-rows: 40px 40px 30px 1fr 100px;
+grid-gap: 20px;
+  max-width: 1024px;
+}
+.name {
+  grid-column: 1 / span 4;
+  grid-row: 1;
+}
+.title {
+    grid-column: 1 / span 3;
+    grid-row: 2;        
+}
+.education {
+    grid-column: 1;
+    grid-row: 4;
+}
+.experience {
+    grid-column:2;
+    grid-row: 4;
+}
+.code {
+    grid-column: 3;
+    grid-row: 4;
+}
+.research {
+    grid-column: 4;
+    grid-row: 4;
+}
+.clients {
+    grid-column: 5;
+    grid-row: 4;
+}
+    
+footer {
+    grid-column: 1 / span 4;
+    grid-row: 5;
+}
+}
+img {
+    border-radius: 50%;
+    padding-top: 10px;
+}
+</style>
+</head>
+<body>
+<div class="grid-container">
+
+<div class="name"><h1>James William Dunn</h1>
+</div>
+
+<div class="title"><h2>PRINCIPAL TECHNOLOGIST</h2>
+</div>
+
+<div class="education"> 
+<ul><li>Education</li>
+    <li>BS Computer Science</li>
+    <li>Autonomous Vehicle Engineer</li>
+    </ul>
+</div>
+    
+<div class="experience">
+<ul>
+<li>Experience</li>
+<li>Autonomous Vehicle Engineer</li>
+<li>Technical Writer / Editor</li>
+<li>Scientific Researcher</li>
+<li>Full Stack Developer</li>
+<li>Senior Software Developer</li>
+<li>Database Consultant</li>
+<li>Technical Project Manager</li>
+</ul>
+</div>
+
+<div class="code">
+<ul>
+<li>Code</li>
+<li>C++</li>
+<li>Python</li>
+<li>JavaScript</li>
+<li>CSS</li>
+<li>HTML</li>
+<li>PHP</li>
+<li>SQL</li>
+</ul>
+</div>
+
+<div class="research">
+<ul><li>Research</li>
+<li>Algorithms</li>
+<li>Autonomous Transport</li>
+<li>Robotics</li>
+<li>Data Visualization Simulation</li>
+<li>Database Optimization</li>
+<li>Machine Learning</li>
+</ul>
+</div>
+
+<div class="clients">
+<ul><li>Clients</li>
+<li>Motivara</li>
+<li>Microsoft</li>
+<li>Barnes &amp; Noble</li>
+<li>Allied Signal</li>
+<li>MicroAge</li>
+<li>Honeywell Bull</li>
+<li>ASU Bookstore</li>
+</ul>
+</div>
+
+    <footer>
+        <ul><li>About me</li><li>Coding since 1976</li><li>Autonomous systems software research</li><li> Microsoft-alum</li>
+        </ul>
+        <ul><li>Contact</li><li>jwdunn.scientist at gmail dot com</li></ul>
+    <img src="https://avatars3.githubusercontent.com/u/4262131?s=400&v=4" width="120"/></footer>
+</div>
+</body>
+</html>
