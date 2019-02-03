@@ -1,170 +1,286 @@
-<!DOCTYPE html>
-<head>
+<meta content="text/html; charset=utf-8" http-equiv=Content-Type>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet"> 
-<link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet"> 
-<style>
-html,body,h1,h2,ul,li {
- 	padding: 0px;
-	margin: 0px;
-}
-body {
-	padding: 0px;
-	margin: 44px;
-	background-color: #373737;
-	font-family: 'Roboto', sans-serif;
-	color: #ffffff;
-	font-weight: 100;
-}
+  <link rel="stylesheet" href="normalize.css"> <!-- reset styles -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"> <!-- hamburger icon -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet"> <!-- main font -->
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet"> <!-- masthead font -->
+  <link rel="stylesheet" type="text/css" href="style.css"> <!-- web page styles -->
 
-h1 {
-	font-family: 'Oswald', sans-serif;
-	font-size: 38px;
-	font-weight: 300;
-}
-h2,h3,h4 {
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	font-weight: 100;
-}
-.title{
-  letter-spacing: 1px;
-}
-ul,li {
-	font-weight: 100;
-    list-style-type: none;
-}
-li:first-child {
-	font-weight: 400;
-    list-style-type: none;
-}
-ul {
-  margin-top: 30px;
-}
-.education {
-  margin-top: 60px;
-}
-@media only screen and (min-width: 720px) {
-.education {
-  margin-top: 0px;
-}
-.grid-container {
-display: grid; 
-grid-template-columns: 1fr 1fr 100px 1fr 1fr;
-grid-template-rows: 40px 40px 30px 1fr 100px;
-grid-gap: 20px;
-  max-width: 1024px;
-}
-.name {
-  grid-column: 1 / span 4;
-  grid-row: 1;
-}
-.title {
-    grid-column: 1 / span 3;
-    grid-row: 2;        
-}
-.education {
-    grid-column: 1;
-    grid-row: 4;
-}
-.experience {
-    grid-column:2;
-    grid-row: 4;
-}
-.code {
-    grid-column: 3;
-    grid-row: 4;
-}
-.research {
-    grid-column: 4;
-    grid-row: 4;
-}
-.clients {
-    grid-column: 5;
-    grid-row: 4;
-}
-    
-footer {
-    grid-column: 1 / span 4;
-    grid-row: 5;
-}
-}
-img {
-    border-radius: 50%;
-    padding-top: 10px;
-}
-</style>
-</head>
-<body>
-<div class="grid-container">
+<body id="home">
+  <div class="masthead">&nbsp;
+  </div>
+  <img src="images/jwd.png">
+  
+  <p class="intro">Hello! My professional skills include designing, engineering, and developing code for safe autonomous vehicles, full-stack distributed applications, and scalable enterprise systems. Below is a showcase of selected work organized into four categories.</p>
 
-<div class="name"><h1>James William Dunn</h1>
+
+  <!-- PORTFOLIO -->
+
+  <span id="portfolio" class="gap">&nbsp;</span>
+  <div class="titlerole pushme">PORTFOLIO</div>
+
+  <a class="menuThing" href="#cat0"><span class="inner">01 Autonomous vehicles</span></a>
+  <a class="menuThing" href="#cat1"><span class="inner">02 Software research</span></a>
+  <a class="menuThing" href="#cat2"><span class="inner">03 Client/front-end systems</span></a>
+  <a class="menuThing" href="#cat3"><span class="inner">04 Server/back-end systems</span></a>
+
+  <span id="spacer" class="gap">&nbsp;</span>
+
+  <div id="wrapper"> <!-- project cards are placed here programmatically --> 
+  </div>
+
+
+
+  <!-- ADDITIONAL CONTRIBUTIONS -->
+
+<!-- button class="accordion">Press for additional contributions</button>
+<div class="panel">
+<p class="contrib">
+   The following is a manifest of additional projects, research, open source contributions, publications, teaching, professional development courses, and adventures.
+<br><br>
+    <span class="emph">Projects and research</span>
+    2018: Web worker integration with browser simulations.
+          p5kit and CSB timeline development.
+    2017: ScanFest.org design/prototype.
+    2016: Reimplementation of arc explorer in Verity with three.js.
+    2015: Verity: Processing-like API in JavaScript using either Pixi.js or Three.js renderer.
+    2014: ColorCubeExplorer with Z-order sorting for correct alpha - an example of how to properly render depth first in WebGL.
+    2013-2014: Coordinated multi-threading in Processing (Java) for higher performance.
+          Studies in background rendering calculations; Perlin noise; Brownian motion; traffic simulation.
+    2013: City visualizations for Proximity Algorithm
+          n-body problem: observations on stability (based on study by Kryštof Pešek).
+          Concentric3D: arc segment explorer (based on earlier work in Swift3D and Flash) rendering 3D arcs using concentrically oriented boxes.
+          Economy simulation – initial product deliveries.
+          CollisionLab: studies in predictive, mathematically accurate simulation of elastic collision.
+          ArcMachine2: initial studies in rendering animated dynamically generated arc segments in Processing.
+    2010: Configured and built custom quiet DAW computer (Xeon W3520 2.67/3.5GHz).
+    2009: Proximity Algorithm (sustainable recursive scalability).
+    2010: kRN website development.
+    2009: CSB website.
+    2009: MSAF identity, medallion, and invitation production.
+    2007-10: trifc.org identity, website development, and newsletter production.
+    2006-11: Brant Photographers website development.
+    2005: BetterPhoto templates.
+    2004: Recording engineer for the Michael Stegner Trio (album released in 2007).
+          Experimental sampling and microphone placement on grand piano.
+    2003: Microsoft Software Assurance: technology services.
+    1993: During attempts to process RAS nightly loads, I discovered a bug in SQL Server 4.21 which the SQL team described as: "Hardware underflow floating point interrupt error. HAL should have cleared it. SQL Server did not expect it."
+<br><br>
+  <span class="emph">Open Source Contributions</span>
+    2018: github: diwi/p5.EasyCam/pull/6 (fix)
+          github: udacity/fcnd-issue-reports/issues/377
+          github: freeCodeCamp/freeCodeCamp/issues/17875
+          github: udacity/fcnd-issue-reports/issues/346
+          github: udacity/fcnd-issue-reports/issues/340
+          github: udacity/fcnd-issue-reports/issues/320
+          github: udacity/fcnd-issue-reports/issues/149
+          github: udacity/fcnd-issue-reports/issues/148
+          github: udacity/fcnd-issue-reports/issues/60
+    2017: github: udacity/sdc-issue-reports/issues/1231
+          github: udacity/sdc-issue-reports/issues/976
+          github: udacity/sdc-issue-reports/issues/707
+          github: udacity/sdc-issue-reports/issues/706
+          github: udacity/sdc-issue-reports/issues/683
+          github: udacity/sdc-issue-reports/issues/457
+    2016: github: staltz/matrixmultiplication.xyz/issues/5
+          github: jsperf/jsperf.com/issues/247
+          github: pixijs/pixi.js/issues/2454
+          github: processing/processing-docs/issues/372
+    2015: github: processing-js/processing-js/pull/212 (rAF)
+          github: pixijs/pixi.js/issues/1923
+          github: pixijs/pixi.js/issues/1911
+          github: pixijs/pixi.js/issues/1858
+          github: pixijs/pixi.js/issues/1786
+          github: pixijs/pixi.js/issues/1823
+    2014: github: mrdoob/three.js/issues/4887
+    2013: github: processing/processing/issues/1941
+<br><br>
+  <span class="emph">Publications</span>
+    2018: github: p5.EasyCam compatibility with p5 v0.7.2
+    2018: github: Responsive website for rnschultz.com
+    2016: OpenProcessing: sketch/386736 Neural network in 12 lines of JS.
+    2016: github: TinyMatrix minimal matrix operations in JavaScript.
+    2016: Tutorial: ten steps to creating Audulus synthesizer.
+    2015: OpenProcessing: sketch/206425 Sphiral minima particle study.
+    2015: Observations: documented numerical approximation of pi.
+    2013: Observations: Pocket Trains Strategy Guide (19,870 views).
+    2010: SeaTreasures: Coral restoration educational material.
+    2009: mode full-length musical album release (via iTunes, cdbaby, Amazon).
+    2003: Observations: The Dawn of Simplicity.
+    2001: Database Hammer (a customizable VB app for load simulation) distributed as a tool in the SQL Server 2000 Resource Kit. Uses OLEDB to connect to SQL Server from multiple instances of a VB component and inserts 10 million rows of random data into a test database.
+    1988: PCAI Magazine: two review articles.
+<br><br>
+  <span class="emph">Teaching</span>
+    2002: Internet Data Center (IDC) management (instructor at Redmond, Cannes, New Delhi, and Singapore).
+    1998: Practical Performance Tuning of SQL Server (instructor for MCS).
+    1995: SQL Server Implementation (instructor at Mirage).
+    1995: SQL Server Administration (instructor at Mirage).
+    1994: Visual Basic / SQL Server (instructor at Sandia National Laboratories).
+    1994: Visual Basic / SQL Server (instructor at Mirage).
+    1977: Fortran fundamentals (volunteer instructor at Stuyvesant High School).
+<br><br>
+  <span class="emph">Editing</span>
+    2018: O'Reilly: JavaScript: The Definitive Guide, Errata on page 226.
+          Pearson: JavaScript Absolute Beginner's Guide, Errata on page 35
+          wikipedia: Cohesion (computer science).
+    2017: wikipedia: MOS Technology
+          wikipedia: microprocessor.
+    2016: wikipedia: Matrix multiplication
+          wikipedia: Women in computing
+          wikipedia: Computational mathematics
+          wikipedia: Halley's method
+          wikipedia: Geometric mean
+          wikipedia: Bhaskara I's sine approximation formula.
+    2015: wikipedia: Test fixture
+          wikipedia: Arecibo message
+          wikipedia: MOS Technology 8502.
+    2014: wikipedia: Talk: Game mechanics
+          wikipedia: kynamatrix Research Network.
+    2013: wikipedia: Stepstone.
+    2009: wikipedia: Marvin Minsky.
+<br><br>
+  <span class="emph">Professional training courses and certification</span>
+    2001: TypeSmart: Building Strong Working Relationships,
+          Underhill Training and Development.
+    1998: Advance Your Consulting Skills,
+          Hill Enterprises.
+    1997: Microsoft Solutions Framework,
+          Solution Development Discipline &amp; Designing Component Solutions.
+    1996: Microsoft Certified Professional Solution Developer (MCSD).
+    1995: Effective Presentation Techniques.
+    1994: Consulting Essentials.
+    1993: Negotiation-Based Consulting Skills,
+          NortonHoffberg &amp; Company
+    1993: Consulting Skills,
+          Novations Group, Inc.
+    1992: Managing Projects from Proposal to Shipping,
+          Knowledge Structures, Inc.
+    1991: Playing to Win,
+          Leaders Experiential Adventure Program (LEAP),
+          Pecos River Learning Centers, Inc.
+    1990: Managing For Productivity,
+          Organizational Dynamics, Inc.
+    1988: Leadership Strategies,
+          Consultants for Management Development.
+    1987: Designing the User Interface,
+          Dr. Ben Schneiderman.
+<br><br>
+  <span class="emph">Adventures</span>
+    Skied Breckenridge &amp; Telluride in CO; Snowbowl &amp; Sunrise in AZ; Stevens &amp; Snoqualmie Pass in WA.
+    Hiked trails in Washington; "off-roading" various parts of Arizona.
+    Lived in Arizona, Florida, England, New York, Nevada, Washington.
+    Visited the Taj Mahal and the Grand Canyon.
+    Survived a BMW M3 crash (airbag deployed, vehicle totaled).
+    Solo performance on the Dale Chihuly Steinway piano at Benaroya Hall in Seattle before a live audience (part of a benefit concert for the nonprofit organization "Music Is For Everyone").
+    Race-track training and lapping experience with a Honda S2000.
+    Jumped from a DC-3 (static line parachute).
+    Explored the streets and subways of New York City.
+    House destroyed by lightning during storm in Florida.
+<br><br>
+</p>
 </div>
 
-<div class="title"><h2>PRINCIPAL SOFTWARE ENGINEER</h2>
-</div>
+  <!-- TESTIMONIALS -->
+  
+  <span id="commendation" class="gap">&nbsp;</span>
+  <div class="titlerole pushme">COMMENDATIONS</div>
+  <p class="intro">Below is feedback I've received on performance reviews from managers and clients:</p>
+  
+  <p class="mainp">"Strategic architectural design is the area where James shines the most, he was responsible for the architecture, design, and implementation of a major system (YRM) at the Mirage, where the customer was satisfied with the results." -Walid Abu-hadba, manager</p>
+  
+  <p class="mainp">"Quality of work is very high. James does what it takes to satisfy the customer and they ask for him by name." -Mike Kinney, manager</p>
+  
+  <p class="mainp">"James' technical skills are unquestionable. He makes it a point to analyze and understand every aspect of a project on which he is working." -Paramesh Vaidyanathan, manager</p>
+  
+  <p class="mainp">"The BN.com project has been a phenomenal success, providing significant product feedback (including 30 critical bugs) and increased order processing capacity for the customer. What stands out is that James did this single handedly." -Daryl Wray, manager</p>
+  
+  <p class="mainp">"James is truly gifted in analysis, design, and execution." -Microsoft client</p>
 
-<div class="education"> 
-<ul><li>Education</li>
-    <li>BS Computer Science</li>
-    <li>Autonomous Vehicle Engineer</li>
-    </ul>
-</div>
-    
-<div class="experience">
-<ul>
-<li>Experience</li>
-<li>Autonomous Vehicle Engineer</li>
-<li>Technical Writer / Editor</li>
-<li>Scientific Researcher</li>
-<li>Full Stack Developer</li>
-<li>Senior Software Developer</li>
-<li>Database Consultant</li>
-<li>Technical Project Manager</li>
-</ul>
-</div>
+  <p class="mainp">"His strongest trait is his high quality work and his attention to detail. Whenever James sets about doing something, you know it will be done right!" -Mike Kinney, manager</p>
 
-<div class="code">
-<ul>
-<li>Code</li>
-<li>C++</li>
-<li>Python</li>
-<li>JavaScript</li>
-<li>CSS</li>
-<li>HTML</li>
-<li>PHP</li>
-<li>SQL</li>
-</ul>
-</div>
+  <p class="mainp">"James has a strong ability to illustrate difficult concepts." -Microsoft client</p>
 
-<div class="research">
-<ul><li>Research</li>
-<li>Algorithms</li>
-<li>Autonomous Transport</li>
-<li>Robotics</li>
-<li>Data Visualization Simulation</li>
-<li>Database Optimization</li>
-<li>Machine Learning</li>
-</ul>
-</div>
+  <!-- ABOUT -->
 
-<div class="clients">
-<ul><li>Clients</li>
-<li>Motivara</li>
-<li>Microsoft</li>
-<li>Barnes &amp; Noble</li>
-<li>Allied Signal</li>
-<li>MicroAge</li>
-<li>Honeywell Bull</li>
-<li>ASU Bookstore</li>
-</ul>
-</div>
+  <span id="about" class="gap">&nbsp;</span>
+  <div class="titlerole pushme">ABOUT</div>
 
-    <footer>
-        <ul><li>About me</li><li>Coding since 1976</li><li>Autonomous systems software research</li><li> Microsoft-alum</li>
-        </ul>
-        <ul><li>Contact</li><li>jwdunn.scientist at gmail dot com</li></ul>
-    <img src="https://avatars3.githubusercontent.com/u/4262131?s=400&v=4" width="120"/></footer>
-</div>
+  <p class="mainp"><span class="drop">A</span>t an early age, I realized an interest in science, mathematics, and technology: I mixed compounds using my chemistry set, explored circuits with a modular electronics kit, and poked at the keys of demonstration calculators in department stores. I was especially fascinated by those that were programmable.</p>
+  
+  <p class="mainp" e="defining point">A decisive moment in my life was being admitted to Stuyvesant High School in downtown New York City. It was there that I discovered an IBM computer that students could program. (This was before the PC came along.) The encounter led to learning Fortran and Assembly language, and volunteering as an operator: running jobs and performing supervisory functions.</p>
+  
+  <p class="mainp">A few years later, to help make ends meet during college, I secured a part-time job in the shipping department of Arizona State University Bookstore. Ultimately, management recognized they had a computer science major on their team and promoted me to support their inventory management and point-of-sale system.</p> 
+  
+  <p class="mainp" f="processed their daily sales data and produced summary reports.">In this new position, I was responsible for downloading transaction data from a digital tape attached to each cash register and keeping the nightly batch process on track. There were evenings when I would stay late to observe the progression of the many steps in the sequence. Occasionally, the system went off the rails because of a tape machine fault, a process crash, or an excessively long procedure.</p>
+  
+  <p class="mainp">The most notable issues occurred during "rush" week at the beginning of each semester when thousands of students need to buy books. At times, the lines at all fifteen cash registers extended deep into the warehouse-sized store. The collective increase in volume of data revealed choke points that needed refinement or re-engineering. To simultaneously optimize transaction processing <em>and</em>  maintain the vital daily workflow required careful change planning and lots of testing. Over the course of my tenure, I was able to streamline the system to handle all loads - I could launch the nightly process and go home with confidence that it would complete successfully by the morning.</p>
+
+  <p class="mainp"><span class="drop">I</span> ntrospective by nature, I wondered if a computer program could modify itself or be the author of another program. This naturally led to a concentration on artificial intelligence courses including computer vision, robotics, computational linguistics, natural language processing, and expert systems. After graduation, in a research position with Honeywell, I experimented with natural language interfaces to query databases. Using the C language and early versions of Microsoft Windows, I detected similarities between the event-driven programming model and the rule-execution loop of an expert system.</p>
+  
+  <p class="mainp">At MicroAge, I was tasked with righting a failed attempt to create a PC-based distributed order entry system. The intent was to eliminate the personnel who, over the phone, manually keyed in orders from franchisees. It was my job to pick up the pieces and deliver a working version within three months. I examined the prior design and identified several programs with many overlapping components. I proposed a completely new architecture which combined all functionality on a Windows-like interface. With some great team-members, we delivered on time.</p>
+
+  <p class="mainp">A few years later, I accepted a position with Microsoft as the third consultant in the Phoenix office. My first assignment was at the colorful Mirage in Las Vegas. Originally planned as a three-week project, the consultation rapidly expanded to diverse projects. Over the next seven years, consulting with customers across the Southwest area, I specialized in database optimization and system architecture.</p>
+
+  <p class="mainp">As Microsoft was shifting focus from the desktop platform to mission-critical enterprise systems, I moved up to Redmond to assist with this transition. I worked with select clients wishing to adopt the latest Microsoft server technologies. One of these customers, Barnes &amp; Noble, was ramping up their online bookstore capacity. Implementing a scaled duplicate of the BN.com order processing data center on campus, I worked with customer developers to improve throughput and other Microsoft engineers to resolve product issues.</p>
+
+  <p class="mainp">After twelve years with Microsoft, I decided to pursue personal interests including music. Eventually, I joined a startup managed by a talented graphic designer. At Motivara, I deliver customized software solutions ranging from interactive presentations to responsive websites.</p>
+
+  <p class="mainp">Presently, I also volunteer my software engineering skills at kynamatrix Research Network. One of the initiatives involves defining a scalable algorithm to assist those left homeless in the aftermath of disaster. An emergency urban environment with service centers and residential areas can more effectively support survivors during the rebuild process. The plan incorporates existing service providers and proposes technology assistance in the form of robotic construction and autonomous systems.</p>
+
+
+  <!-- CONTACT -->
+
+  <span id="contact" class="gap">&nbsp;</span>
+  <div class="titlerole pushme">CONTACT</div>
+  <p class="mainp">email: jwdunn.scientist at gmail dot com</p>
+
+  <div id="smlinks">
+    <span class="poj"><a class="icons" href="https://www.linkedin.com/in/jwilliamdunn/" target="_blank"><i class="fab fa-linkedin"></i></a></span> 
+  
+    <span class="poj"><a class="icons" href="https://github.com/jwdunn1" target="_blank"><i class="fab fa-github"></i></a></span> 
+  
+    <span class="poj"><a class="icons" href="https://vimeo.com/jwilliamdunn" target="_blank"><i class="fab fa-vimeo"></i></a></span> 
+  
+    <span class="poj"><a class="icons" href="https://jwilliamdunn.blogspot.com" target="_blank"><i class="fab fa-blogger"></i></a></span> 
+  
+    <span class="poj"><a class="icons" href="https://stackoverflow.com/users/4843719" target="_blank"><i class="fab fa-stack-overflow"></i></a></span> 
+  
+    <span class="poj"><a class="icons" href="https://openprocessing.org/user/27124" target="_blank"><i class="far fa-circle"></i></a></span> 
+  
+    <span class="poj"><a class="icons" href="https://jsfiddle.net/user/intrinsica" target="_blank"><i class="fab fa-jsfiddle"></i></a></span> 
+  
+    <span class="poj"><a class="icons" href="https://codepen.io/jwdunn" target="_blank"><i class="fab fa-codepen"></i></a></span> 
+  
+    <span class="poj"><a class="icons" href="https://facebook.com/jWilliamDunn" target="_blank"><i class="fab fa-facebook"></i></a></span> 
+  
+    <span class="poj"><a class="icons" href="https://twitter.com/jwilliamdunn" target="_blank"><i class="fab fa-twitter"></i></a></span> 
+  
+    <span class="poj"><a class="icons" href="https://pinterest.com/intrinsic1" target="_blank"><i class="fab fa-pinterest"></i></a></span> 
+
+    <span class="poj"><a class="icons" href="https://soundcloud.com/jwilliamdunn" target="_blank"><i class="fab fa-soundcloud"></i></a></span> 
+      
+  </div>
+  
+  <script type="text/javascript" src="cards.js"></script>
+
+  <span id="end" class="gap">&nbsp;</span>
+  <!-- Navigation is fixed to the top of the web page.
+       The div is placed at the end of the DOM flow to render 
+       above all other objects. To further assist, the 
+       z-index for the topnav class is set to 1000.
+  -->
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="nf active" onclick="toggleOff()">James William Dunn<br>
+      <span class="titlerole">SOFTWARE ENGINEER</span></a>
+      <div class="r">
+        <a href="#portfolio" onclick="toggleOff()" style="padding-right:8px;padding-left:16px;">Portfolio</a>
+        <a href="#about" style="padding-right:8px;padding-left:16px;" onclick="toggleOff()">About</a>
+        <a href="#contact" style="padding-left:16px;" onclick="toggleOff()">Contact</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="toggle()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+  <script type="text/javascript" src="script.js"></script> <!-- navigation code -->
 </body>
-</html>
