@@ -122,7 +122,7 @@
   category: 0,
   subCategory: [ "ui","ux","algorithms","logo","product design","video design", "web design"],
   image: "images/sense.png",
-  desc:'<span class="boldDesc">Localization: particle filter:</span><br> With sensor data and a map, I determine the probabalistic location of a vehicle using the principles of Markov localization. Tools: C++.<br><a href="https://github.com/jwdunn1/CarND-Localization/blob/master/src/particle_filter.cpp" target="_blank">View code</a> | <a href="https://vimeo.com/217426713" target="_blank">View results</a>',
+  desc:'<span class="boldDesc">Localization: particle filter:</span><br> With sensor data and a map, I determine the probabilistic location of a vehicle using the principles of Markov localization. Tools: C++.<br><a href="https://github.com/jwdunn1/CarND-Localization/blob/master/src/particle_filter.cpp" target="_blank">View code</a> | <a href="https://vimeo.com/217426713" target="_blank">View results</a>',
   tags: [ "black","white","identity","research" ],
   tbd: [ "draft", "edit", "vectors", "code", "photos", "find"]
   },
