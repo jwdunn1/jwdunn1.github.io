@@ -206,7 +206,7 @@
   category: 1,
   subCategory: [ "ui","ux","algorithms","logo","product design","video design", "web design"],
   image: "images/proximity.png",
-  desc:'<span class="boldDesc">Improving logistics:</span><br> The current response system to natural disasters still leaves many people homeless and without basic needs. As a volunteer researcher at kynamatrix, I am assisting in the design and engineering of the Proximity Algorithm, a scalable method to rapidly deploy service and residential modules, so that our communities can more effectively support survivors during the rebuild process.',
+  desc:'<span class="boldDesc">Improving logistics:</span><br> The current response system to natural disasters still leaves many people homeless and without basic needs. As a volunteer researcher at kynamatrix, I am assisting in the design and engineering of the Proximity Algorithm, a scalable method to rapidly deploy service and residential modules, so that our communities can more effectively support survivors during the rebuild process.<br><a href="http://kynamatrix.org/#Rcat0" target="_blank">Read more</a>',
   tags: [ "black","white","identity","research" ],
   tbd: [ "draft", "edit", "vectors", "code", "photos", "find"]
   },
@@ -218,7 +218,7 @@
   category: 1,
   subCategory: [ "ui","ux","algorithms","logo","product design","video design", "web design"],
   image: "images/net.png",
-  desc:'<span class="boldDesc">KnowledgeShare:</span><br> Automated categorization and indexing of existing knowledge solutions (such as forums, blogging, structured files, email, etc.) Simple utilities for linking, visualization, and conversation. Structured queries can be answered thereby amplifying expertise. Tools: Python, SQL.',
+  desc:'<span class="boldDesc">KnowledgeShare:</span><br> Automated categorization and indexing of existing knowledge solutions (such as forums, blogging, structured files, email, etc.) Simple utilities for linking, visualization, and conversation. Structured queries can be answered thereby amplifying expertise. Tools: Python, SQL.<br><a href="http://kynamatrix.org/#Rcat1" target="_blank">Read more</a>',
   tags: [ "black","white","identity","research" ],
   tbd: [ "draft", "edit", "vectors", "code", "photos", "find"]
   },
