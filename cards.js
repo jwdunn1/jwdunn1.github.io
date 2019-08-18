@@ -362,7 +362,7 @@
   category: 3,
   subCategory: [ "ui","ux","algorithms","logo","product design","video design", "web design"],
   image: "images/dna1.png",
-  desc:'<span class="boldDesc">Scalable architecture:</span><br> Based on learnings from the BN.com project, I authored and published a whitepaper at Microsoft on the subject of designing scalable, highly-available systems using Windows DNA technologies. This paper is referenced by nine technical articles and two patents (6542902 and 7114158).<br><a href="http://www.motivara.com/Archives/WinDNA.pdf" target="_blank">View paper</a>',
+  desc:'<span class="boldDesc">Scalable architecture:</span><br> Based on learnings from the BN.com project, I authored and published a whitepaper at Microsoft on the subject of designing scalable, highly-available systems using Windows DNA technologies. The <em>scalable workflow architecture</em> predates what we now call a <em>microservices architecture</em>. This paper is referenced by nine technical articles and two patents (6542902 and 7114158).<br><a href="http://www.motivara.com/Archives/WinDNA.pdf" target="_blank">View paper</a>',
   tags: [ "black","white","identity","research" ],
   tbd: [ "draft", "edit", "vectors", "code", "photos", "find"]
   },
