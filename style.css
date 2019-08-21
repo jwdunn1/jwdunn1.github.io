@@ -248,6 +248,7 @@ figcaption a:hover {
   font-family:'Roboto', sans-serif;
   font-size: 10.5px;
   letter-spacing: 2.3px;
+  display: block;
 }
 .intro {
   padding: 20px 40px 10px 40px;
