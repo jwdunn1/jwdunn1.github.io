@@ -253,6 +253,14 @@ figcaption a:hover {
 .intro {
   padding: 20px 40px 10px 40px;
 }
+@media print {
+  #wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+  .titleBox {
+    grid-column-end: span 2;
+  }
+}
 @media(min-width:640px){
   #wrapper {
     grid-template-columns: 1fr 1fr;
