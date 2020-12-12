@@ -130,11 +130,11 @@ figure {
   font-size: 1.2em;
 }
 .fa {padding-top: 4px;}
-@media screen and (min-width: 340px) {
+/*@media screen and (min-width: 340px) {
   .topnav a {
     font-size: 1.0em;
   }
-}
+}*/
 .topnav .r {
     float: right;
     font-size: .7em;
