@@ -266,7 +266,7 @@
   category: 2,
   subCategory: [ "ui","ux","algorithms","logo","product design","camera", "3d"],
   image: "images/easycam.png",
-  desc:'<span class="boldDesc">Open source library:</span><br> Simple 3D camera control for p5.js with inertial pan, zoom, and rotate. This JavaScript library is forked from previous contributions by Thomas Diewald. Recent updates include support for new versions of p5js and multiple offset canvases. <br><a href="github.com/freshfork/p5.EasyCam?code=1" target="_blank">View repository</a>',
+  desc:'<span class="boldDesc">p5.EasyCam library:</span><br> Simple 3D camera control for p5.js with inertial pan, zoom, and rotate. This JavaScript library is forked from previous contributions by Thomas Diewald. Recent updates include support for new versions of p5js and multiple offset canvases. <br><a href="https://github.com/freshfork/p5.EasyCam?code=1" target="_blank">View repository</a>',
   tags: [ "black","white","identity","research" ],
   tbd: [ "draft", "edit", "vectors", "code", "photos", "find"]
   },
