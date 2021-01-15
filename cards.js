@@ -260,6 +260,18 @@
   },
   {
   id:0,
+  year: 2019,
+  agency: "Motivara",
+  client: "Open Source",
+  category: 2,
+  subCategory: [ "ui","ux","algorithms","logo","product design","camera", "3d"],
+  image: "images/easycam.png",
+  desc:'<span class="boldDesc">Open source library:</span><br> Simple 3D camera control for p5.js with inertial pan, zoom, and rotate. This JavaScript library is forked from previous contributions by Thomas Diewald. Recent updates include support for new versions of p5js and multiple offset canvases. <br><a href="github.com/freshfork/p5.EasyCam?code=1" target="_blank">View repository</a>',
+  tags: [ "black","white","identity","research" ],
+  tbd: [ "draft", "edit", "vectors", "code", "photos", "find"]
+  },
+  {
+  id:0,
   year: 2014,
   agency: "Motivara",
   client: "Experimental",
@@ -341,6 +353,18 @@
   desc:'<span class="boldDesc">Order/inquiry system:</span><br> At MicroAge, I designed, developed, and released the first and second major versions of ZDATA, a distributed inventory database and order creation system for franchisees. Tools: C, Btrieve, Greenleaf, ZMODEM, Unix, and LU6.2.',
   tags: [ "black","white","identity","research" ],
   tbd: [ "draft", "edit", "vectors", "code", "photos", "find"]
+  },
+  {
+  id: 0,
+  year: 2020,
+  agency: "Motivara",
+  client: "Open Source",
+  category: 3,
+  subCategory: [ "ui","ux","algorithms","logo","product design","simulation", "database"],
+  image: "images/dbAnimator.png",
+  desc:'<span class="boldDesc">dbAnimator:</span><br> An open-source software testing tool for simulating multi-client transactional pressure against a database server. The original VB6 version is now converted to VB16 and C#.<br><a href="https://github.com/freshfork/dbAnimator" target="_blank">View repository</a>',
+  tags: [ "black","white","identity","research" ],
+  tbd: [ "draft", "edit", "hammer", "code", "photos", "find"]
   },
   {
   id: 0,
