@@ -6,7 +6,7 @@ html {
 }
 body {
   box-sizing: border-box;
-  color: #707070;  /* #9A9A9A; */
+  color: #525252;  /* #707070 #9A9A9A; */
   background: #f4f4f4; /* #EAE8E8; */
   font-family: 'Roboto', sans-serif;
   font-size:1.1em;
@@ -328,7 +328,7 @@ figcaption a:hover {
   padding: 10px;
   margin: 10px 10px 30px 10px;
   background-color: #efefef; /*#eee;*/
-  color: #6b6b6b;
+  color: #505050; /* 6b6b6b */
   font-size: 1.1em;
   border: 1px #ddd solid;
   box-shadow: 1px 2px 14px 0 rgba(0,0,0, 0.15);
