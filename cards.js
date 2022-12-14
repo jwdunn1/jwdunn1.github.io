@@ -170,7 +170,7 @@
   category: 0,
   subCategory: [ "ui","ux","algorithms","logo","product design","video design", "web design"],
   image: "images/3.png",
-  desc:'<span class="boldDesc">Behavioural cloning:</span><br> Here, I train a deep network to steer a vehicle using transfer learning and data augmentation. Tools: Python, OpenCV, Keras, Excel, Premiere Pro, and Illustrator.<br><a href="https://github.com/jwdunn1/CarND-Behavioral-Cloning?files=1" target="_blank">View code</a> | <a href="https://github.com/jwdunn1/CarND-Behavioral-Cloning#deep-learning-network-cloning-of-human-driving-behavior" target="_blank">View report</a>',
+  desc:'<span class="boldDesc">Behavioral cloning:</span><br> Here, I train a deep network to steer a vehicle using transfer learning and data augmentation. Tools: Python, OpenCV, Keras, Excel, Premiere Pro, and Illustrator.<br><a href="https://github.com/jwdunn1/CarND-Behavioral-Cloning?files=1" target="_blank">View code</a> | <a href="https://github.com/jwdunn1/CarND-Behavioral-Cloning#deep-learning-network-cloning-of-human-driving-behavior" target="_blank">View report</a>',
   tags: [ "black","white","identity","research" ],
   tbd: [ "draft", "edit", "vectors", "code", "photos", "find"]
   },
