@@ -253,7 +253,7 @@
   client: "Customers",
   category: 1,
   subCategory: [ "ui","ux","algorithms","logo","product design","video design", "web design"],
-  image: "images/honeywell.png",
+  image: "_1_",
   desc:'<span class="boldDesc">Experimental interfaces:</span><br> While at Honeywell Bull, I researched alternative approaches to explore corporate repositories and expert system knowledge bases. I prototyped a visual database navigator and a menu-based natural language interface. These investigations were extensions of my artificial intelligence focus at Arizona State University. Tools: C, Windows, and SQL.',
   tags: [ "black","white","identity","research" ],
   tbd: [ "draft", "edit", "vectors", "code", "photos", "find"]
@@ -325,7 +325,7 @@
   client: "Intel",
   category: 2,
   subCategory: [ "ui","ux","algorithms","logo","product design","video design", "web design"],
-  image: "images/intel.png",
+  image: "_4_",
   desc:'<span class="boldDesc">Supply chain planner:</span><br> At Microsoft, I implemented a global logistics planning wizard for Intel Corporation. Users schedule capacity and route output from microprocessor wafer factories (fabs) to assembly/test facilities. I captured and embodied expertise in the form of business rules to replace the legacy process of emails, spreadsheets, and phone calls. Tools: Visual Basic and SQL Server.',
   tags: [ "black","white","identity","research" ],
   tbd: [ "ELVIS", "electronic", "logistics", "verification", "inventory", "scheduling" ]
@@ -337,7 +337,7 @@
   client: "Mirage",
   category: 2,
   subCategory: [ "ui","ux","algorithms","logo","product design","video design", "web design"],
-  image: "images/ras.png",
+  image: "_2_",
   desc:'<span class="boldDesc">Analysis system:</span><br> At Microsoft, I implemented RAS, a spreadsheet-based tool to help retail managers at the Mirage maximize profits through improved analysis of sales data. It also monitors vendor performance and assists in planning merchandise inventory levels. Tools: Microsoft Excel, macros, command shell scripts, SQL Server stored procedures, and C.',
   tags: [ "black","white","identity","research" ],
   tbd: [ "draft", "edit", "vectors", "code", "photos", "find"]
@@ -454,6 +454,9 @@
       }
       var node = document.createElement("div");
       node.className = "card";
+      if(portfolio[i].image[0]=='_')
+      node.innerHTML = '<canvas id="' + portfolio[i].image + '"></canvas><p>' + portfolio[i].desc + '</p>';
+      else
       node.innerHTML = '<img src="' + portfolio[i].image + '"><p>' + portfolio[i].desc + '</p>';
       wrapper.appendChild(node);
     }
