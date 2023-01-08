@@ -3,7 +3,7 @@
 function p5(sketch, canvid){
 
 (function (w) {
-  var version="1.1.2",
+  var version="1.1.3",
       ctx,set=false,gdoStroke=true,gdoFill=true,
       gFill="#fff",gStroke="#000",gWeight=1,looping=true,
       gtextSize=12,gtextFont='serif',gtextStyle=0,canv;
@@ -158,8 +158,8 @@ function p5(sketch, canvid){
     if(gdoFill)ctx.fill();
     if(gdoStroke)ctx.stroke();
   };
-  w.circle = function(x,y,d){w.ellipse(x,y,d/2,d/2);};
-  w.loop = function(){looping=true;loop();};
+  w.circle = function(x,y,d){w.ellipse(x,y,d/2,d/2);}; // or use arc?
+  w.loop = function(){if(looping)return;looping=true;loop();};
   w.noLoop = function(){looping=false;};
   w.line = function(x1,y1, x2,y2){
     var offset = (gWeight%2==0)?0:0.5;
