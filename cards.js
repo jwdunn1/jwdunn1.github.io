@@ -121,7 +121,7 @@
   client: "Client Name",
   category: 0,
   subCategory: [ "ui","ux","algorithms","logo","product design","video design", "web design"],
-  image: "images/sense.png",
+  image: "_6_",
   desc:'<span class="boldDesc">Localization: particle filter:</span><br> With sensor data and a map, I determine the probabilistic location of a vehicle using the principles of Markov localization. Tools: C++.<br><a href="https://github.com/jwdunn1/CarND-Localization/blob/master/src/particle_filter.cpp" target="_blank">View code</a> | <a href="https://vimeo.com/217426713" target="_blank">View results</a>',
   tags: [ "black","white","identity","research" ],
   tbd: [ "draft", "edit", "vectors", "code", "photos", "find"]
@@ -205,7 +205,7 @@
   client: "Open source",
   category: 1,
   subCategory: [ "ui","ux","algorithms","logo","product design","video design", "web design"],
-  image: "images/proximity.png",
+  image: "_5_",
   desc:'<span class="boldDesc">Improving logistics:</span><br> The current response system to natural disasters still leaves many people homeless and without basic needs. As a volunteer researcher at kynamatrix, I am assisting in the design and engineering of the Proximity Algorithm, a scalable method to rapidly deploy service and residential modules, so that our communities can more effectively support survivors during the rebuild process.<br><a href="http://kynamatrix.org/#Rcat0" target="_blank">Read more</a>',
   tags: [ "black","white","identity","research" ],
   tbd: [ "draft", "edit", "vectors", "code", "photos", "find"]

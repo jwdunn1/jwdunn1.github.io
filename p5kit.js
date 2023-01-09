@@ -3,7 +3,7 @@
 function p5(sketch, canvid){
 
 (function (w) {
-  var version="1.1.3",
+  var version="1.1.6",
       ctx,set=false,gdoStroke=true,gdoFill=true,
       gFill="#fff",gStroke="#000",gWeight=1,looping=true,
       gtextSize=12,gtextFont='serif',gtextStyle=0,canv;
@@ -17,10 +17,10 @@ function p5(sketch, canvid){
     var c = document.getElementById(canvid);
     c.setAttribute("width", width);
     c.setAttribute("height", height);
-    ctx = c.getContext('2d');
+    w.drawingContext = ctx = c.getContext('2d');
     w.width = ctx.canvas.width;
     w.height = ctx.canvas.height;
-    w.mouseX = w.width/2, w.mouseY = w.height/2; // new init
+    w.mouseX = w.width/2, w.mouseY = w.height/2;
     c.addEventListener("mousemove", handleEvt);
     c.addEventListener("mousedown", handleEvt);
     c.addEventListener("mouseup", handleEvt);
@@ -28,21 +28,25 @@ function p5(sketch, canvid){
     c.addEventListener("touchend", handleEvt);
     canv = c;
     set = true;
+    ctx.fillStyle = gFill;
+    ctx.strokeStyle = gStroke;
+    ctx.lineWidth = gWeight;
+    ctx.lineCap = 'round';
     return c;
   };
 
   function handleEvt(e){
     if (e.type == "mousedown") {
       var rect = canv.getBoundingClientRect();
-      w.mouseX = e.x-rect.left;
-      w.mouseY = e.y-rect.top;
+      w.mouseX = (e.x-rect.left)*w.width/rect.width;
+      w.mouseY = (e.y-rect.top)*w.width/rect.width;
       w.mouseIsPressed=true;
       return;
     }
     if (e.type == "touchstart") {
       var rect = canv.getBoundingClientRect();
-      w.mouseX = e.touches[0].clientX-rect.left;
-      w.mouseY = e.touches[0].clientY-rect.top;
+      w.mouseX = (e.touches[0].clientX-rect.left)*w.width/rect.width;
+      w.mouseY = (e.touches[0].clientY-rect.top)*w.width/rect.width;
       w.mouseIsPressed=true;
       return;
     }
@@ -52,8 +56,8 @@ function p5(sketch, canvid){
     }
     if (e.type == "mousemove") {
       var rect = canv.getBoundingClientRect();
-      w.mouseX = e.x-rect.left;
-      w.mouseY = e.y-rect.top;
+      w.mouseX = (e.x-rect.left)*w.width/rect.width;
+      w.mouseY = (e.y-rect.top)*w.width/rect.width;
       if(w.mouseMoved) w.mouseMoved();
     }
   }
@@ -66,7 +70,7 @@ function p5(sketch, canvid){
   w.background = function(r,g,b){
     if(arguments.length==1)
       ctx.fillStyle = "rgb("+r+","+r+","+r+")";
-    if(arguments.length==2) // new: alpha
+    if(arguments.length==2)
       ctx.fillStyle = "rgba("+r+","+r+","+r+","+g/255+")";
     if(arguments.length==3)
       ctx.fillStyle = "rgb("+r+","+g+","+b+")";
@@ -88,9 +92,6 @@ function p5(sketch, canvid){
   w.text = function(s, x,y){
     ctx.font = gtextSize+"px "+gtextFont;
     if(gtextStyle>0) ctx.font = (gtextStyle==1? "italic " : "bold " )+ctx.font;
-    ctx.fillStyle = gFill;
-    ctx.strokeStyle = gStroke;
-    ctx.lineWidth = gWeight;
     if(gdoStroke)ctx.strokeText(s, x,y);
     if(gdoFill)ctx.fillText(s, x,y);
   };
@@ -101,6 +102,7 @@ function p5(sketch, canvid){
     if(arguments.length==3)
       gFill = "rgb("+r+","+g+","+b+")";
     gdoFill = true;
+    ctx.fillStyle = gFill;
   };
 
   w.noFill = function(){
@@ -113,11 +115,13 @@ function p5(sketch, canvid){
     if(arguments.length==3)
       gStroke = "rgb("+r+","+g+","+b+")";
     gdoStroke = true;
+    ctx.strokeStyle = gStroke;
   };
 
   w.strokeWeight = function(w){
     gWeight = w;
     gdoStroke = true;
+    ctx.lineWidth = gWeight;
   };
 
   w.noStroke = function(){
@@ -129,7 +133,6 @@ function p5(sketch, canvid){
     _.style.cursor = c;
   };
 
-// begin new
   w.loadImage = function(file){
     let img = new Image();
     img.src = file;
@@ -147,9 +150,6 @@ function p5(sketch, canvid){
   w.pop = function(){ctx.restore();};
   w.ellipse = function(x,y,w,h){
     var offset = (gWeight%2==0)?0:0.5;
-    ctx.fillStyle = gFill;
-    ctx.strokeStyle = gStroke;
-    ctx.lineWidth = gWeight;
     ctx.save();
     ctx.beginPath();
     ctx.translate(x,y);
@@ -163,20 +163,14 @@ function p5(sketch, canvid){
   w.noLoop = function(){looping=false;};
   w.line = function(x1,y1, x2,y2){
     var offset = (gWeight%2==0)?0:0.5;
-    ctx.strokeStyle = gStroke;
-    ctx.lineWidth = gWeight;
     ctx.beginPath();
     ctx.moveTo(x1,y1);
     ctx.lineTo(x2,y2);
     if(gdoStroke)ctx.stroke();
   };
-// end new
 
   w.rect = function(x,y,w,h){
     var offset = (gWeight%2==0)?0:0.5;
-    ctx.fillStyle = gFill;
-    ctx.strokeStyle = gStroke;
-    ctx.lineWidth = gWeight;
     ctx.save();
     ctx.beginPath();
     ctx.translate(x,y);
@@ -187,9 +181,6 @@ function p5(sketch, canvid){
   };
 
   w.triangle = function(x1,y1, x2,y2, x3,y3){
-    ctx.fillStyle = gFill;
-    ctx.strokeStyle = gStroke;
-    ctx.lineWidth = gWeight;
     ctx.beginPath();
     ctx.moveTo(x1,y1);
     ctx.lineTo(x2,y2);
@@ -200,9 +191,6 @@ function p5(sketch, canvid){
   };
 
   w.quad = function(x1,y1, x2,y2, x3,y3, x4,y4){ // new
-    ctx.fillStyle = gFill;
-    ctx.strokeStyle = gStroke;
-    ctx.lineWidth = gWeight;
     ctx.beginPath();
     ctx.moveTo(x1,y1);
     ctx.lineTo(x2,y2);
@@ -212,10 +200,7 @@ function p5(sketch, canvid){
     if(gdoFill)ctx.fill();
     if(gdoStroke)ctx.stroke();
   };
-  w.polygon = function(x1,y1, s,n){ // new
-    ctx.fillStyle = gFill;
-    ctx.strokeStyle = gStroke;
-    ctx.lineWidth = gWeight;
+  w.polygon = function(x1,y1, s,n){
     ctx.beginPath();
     ctx.moveTo (x1+s*Math.cos(0), y1+s*Math.sin(0));        
     for (var i=1; i<=n; i++)
@@ -224,7 +209,7 @@ function p5(sketch, canvid){
     if(gdoFill)ctx.fill();
     if(gdoStroke)ctx.stroke();
   };
-  if(typeof w === "function")w(w); // !!
+  if(typeof w === "function")w(w); // instantiate non-global mode
   function loop(){ if(!looping)return;
     if(set && w.draw) {ctx.setTransform(1,0,0,1,0,0);w.draw();w.frameCount++;}
     else if(!set && w.setup) {w.setup();if(w.draw===undefined)looping=false;}

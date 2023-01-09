@@ -1,6 +1,107 @@
 (function() {
 
 
+  let sketch6 = function(p) {
+
+  var img, X={x:0,y:0}, obst=[{x:100,y:325},{x:240,y:60},{x:1200,y:40},{x:722,y:366}, 
+                              {x:520,y:360},{x:700,y:125},{x:1050,y:350},{x:910,y:70}];
+
+  function dist(x1,y1, x2,y2) {
+    return Math.sqrt((x1 - x2)**2 + (y1 - y2)**2);
+  }
+  
+  p.setup=()=> {
+    img = p.loadImage('images/car.png');
+    p.createCanvas(1400,420);
+  }
+
+  p.draw=()=> {
+    p.push();
+      let gradient = p.drawingContext.createLinearGradient(0,210, p.width,210);
+      gradient.addColorStop(0, 'rgb(46,61,73)');
+      gradient.addColorStop(0.5, 'rgb(37,86,106)');
+      gradient.addColorStop(1, 'rgb(3,177,226)');
+      p.drawingContext.fillStyle = gradient;
+      p.rect(0,0, p.width,p.height);
+    p.pop();
+    
+    p.stroke(255,91,0);
+    p.strokeWeight(6);
+
+    X.x = 0.01*(p.mouseX - X.x) + X.x; //lerp
+
+    for(let i=0; i<8; i++)
+      if(dist(X.x,248, obst[i].x,obst[i].y)<650)
+        p.line(X.x,248, obst[i].x,obst[i].y);
+
+    p.image(img, X.x-171/2,248-85/2);
+    
+    p.fill(237,202,25);
+    p.noStroke();
+    
+    for(let i=0; i<8; i++)
+      if(dist(X.x,248, obst[i].x,obst[i].y)<650)
+        p.circle(obst[i].x,obst[i].y, 28);
+  }
+
+};
+new p5(sketch6, "_6_");
+
+
+let sketch5 = function(p) {
+
+  let particlesArray = [], X={x:0,y:0};
+
+  p.setup=()=> {
+    let cnv = p.createCanvas(1400, 420);
+    cnv.onmouseover = p.loop;
+    X.x=p.width*0.6, X.y=p.height*0.4;
+    generateParticles(151);
+    p.noStroke();
+  };
+
+  p.draw=()=> {
+    p.scale(1,1);
+    p.background(0,0.1*255);
+    particlesArray.forEach((p) => p.rotate());
+    if(p.frameCount%300==0)p.noLoop();
+  }
+
+  function generateParticles(amount) {
+    for (let i = 0; i < amount; i++) {
+      let c,r0=p.random(),r1=p.random()*127+128,r2=p.random();
+      c = (r0<0.5)?[r1,r1,r1]:[0,r2*255,r2*127+128]
+      particlesArray[i] = new Particle(
+        1+p.random()*2, // size
+        c,             // color
+        0.015         // velocity
+      );
+    }
+  }
+  function Particle(width, fillColor, velocity) {
+    this.w = width;
+    this.c = fillColor;
+    this.theta = p.random() * 2*Math.PI;
+    let rnd = p.random() + 0.3;
+    this.v = velocity/rnd;
+    this.r = rnd * 150; // radius
+
+    this.rotate =()=> {
+      this.theta += this.v;
+      p.push();
+        p.fill(this.c[0],this.c[1],this.c[2]);
+        let rad = this.r + this.r * (Math.sin(this.theta))*0.25; // perspective-ish
+        p.translate(X.x+rad*Math.cos(this.theta)*2, X.y+rad*Math.sin(this.theta)); // ellipse 2:1
+        p.rotate(this.theta); // rotate the upcoming rectangle to align with the centerpoint
+        p.rect(0,0, this.w*(Math.sin(this.theta)+1.5),this.w*2); // 4th arg is y-depth, aligned with the trail
+      p.pop();
+    };
+  }
+
+};
+new p5(sketch5, "_5_");
+
+
 let sketch4 = function(p) {
 	let x = 718, y= 367, w=13, h=57, img,
 		dx = 15, dy = 25,
