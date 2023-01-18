@@ -1,0 +1,44 @@
+﻿<style>
+@media screen and (prefers-color-scheme: dark) {
+body {
+  color: #b7b7b7;
+  background-color: #000;
+}
+.masthead {
+  background-color: #000;
+}
+.topnav {
+  background-color: #2b2b2b;
+}
+a:link {
+  color: #a6a6a6;
+}
+a:visited {
+  color: #a6a6a6;
+}
+a:hover {
+  color: #03a9f4;
+}
+.titleBox {
+  color: #fff;
+  background-color: #000;
+}
+.card {
+  color: #ccc;
+  border: 1px #222 solid;
+  background-color: #151515;
+}
+.drop {
+  color: #fff;
+}
+.menuThing {
+  background-color: #222;
+}
+.menuThing:hover {
+  background-color: #373737;
+}
+.boldDesc {
+  color: #fff;
+}
+} /* end media */
+</style>
